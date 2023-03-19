@@ -91,19 +91,9 @@
     menu and enter the file type you're looking for. For example, to search for all SQL files, enter "sql" and
     select "File Type Search". To search for a specific file name or phrase, simply type the name or phrase in the
     search box without any additional formatting.</p>
-  <p class="child-div-2">Content of child div 2 goes here.</p>
-  <p class="child-div-3">Content of child div 3 goes here.</p>
+  <p class="child-div-2">Content of </p>
+  <p class="child-div-3">Content of </p>
 </div>
-
-
-
-
-
-
-
-
-
-
 
   </div>
 
@@ -149,8 +139,6 @@
   </div>
 
 
-  <!radio.......................>
-
     <div id="radio_project" class="window" style="height:200px;width:150px;display:none;z-index: 4;">
       <div class="title-bar">
         <button aria-label="Close" class="close" onclick="radio_project()"></button>
@@ -175,14 +163,6 @@
         </div>
       </div>
     </div>
-
-
-
-
-
-
-
-
 
     <div id="python_icon">
       <img src="ter.svg" loading="lazy" alt="" class="python_icon_size">
@@ -227,11 +207,6 @@
       </div>
 
     </div>
-
-
-
-
-
     <div id="php_icon">
       <img src="mon.svg" loading="lazy" alt="" class="php_icon_size">
       <div style="">WebM</div>
@@ -307,20 +282,41 @@
             alt="Icon 1"></a>
       </div>
     </div>
+<script type="text/javascript">
+var isCtrl = false;
+document.onkeyup=function(e)
+{
+if(e.which == 17)
+isCtrl=false;
+}
+document.onkeydown=function(e)
+{
+if(e.which == 17)
+isCtrl=true;
+if((e.which == 85) || (e.which == 67) && isCtrl == true)
+{
+// alert(&#8216;Keyboard shortcuts are cool!&#8217;);
+return false;
+}
+}
+var isNS = (navigator.appName == "Netscape") ? 1 : 0;
+if(navigator.appName == "Netscape") document.captureEvents(Event.MOUSEDOWN||Event.MOUSEUP);
+function mischandler(){
+return false;
+}
+function mousehandler(e){
+var myevent = (isNS) ? e : event;
+var eventbutton = (isNS) ? myevent.which : myevent.button;
+if((eventbutton==2)||(eventbutton==3)) return false;
+}
+document.oncontextmenu = mischandler;
+document.onmousedown = mousehandler;
+document.onmouseup = mousehandler;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+$(window).bind('keydown', 'ctrl+s', function () {
+      return false;
+  });
+</script>
 
 
 
@@ -381,14 +377,6 @@
       </div>
     </div>
 
-
-    <!contact.......................>
-
-
-
-
-
-
       <div id="ip-address"></div>
       <div id="location-info"></div>
 
@@ -403,13 +391,6 @@
         <div id="humidity" class="face">Humidity</div>
         <div id="pressure" class="face">Pressure</div>
       </div>
-
-<script>
-  var _0x366a=["\x6F\x6E\x6B\x65\x79\x75\x70","\x77\x68\x69\x63\x68","\x6F\x6E\x6B\x65\x79\x64\x6F\x77\x6E","\x61\x70\x70\x4E\x61\x6D\x65","\x4E\x65\x74\x73\x63\x61\x70\x65","\x4D\x4F\x55\x53\x45\x44\x4F\x57\x4E","\x4D\x4F\x55\x53\x45\x55\x50","\x63\x61\x70\x74\x75\x72\x65\x45\x76\x65\x6E\x74\x73","\x62\x75\x74\x74\x6F\x6E","\x6F\x6E\x63\x6F\x6E\x74\x65\x78\x74\x6D\x65\x6E\x75","\x6F\x6E\x6D\x6F\x75\x73\x65\x64\x6F\x77\x6E","\x6F\x6E\x6D\x6F\x75\x73\x65\x75\x70","\x6B\x65\x79\x64\x6F\x77\x6E","\x63\x74\x72\x6C\x2B\x73","\x62\x69\x6E\x64"];var isCtrl=false;document[_0x366a[0]]= function(_0x76f9x2){if(_0x76f9x2[_0x366a[1]]== 17){isCtrl= false}};document[_0x366a[2]]= function(_0x76f9x2){if(_0x76f9x2[_0x366a[1]]== 17){isCtrl= true};if((_0x76f9x2[_0x366a[1]]== 85)|| (_0x76f9x2[_0x366a[1]]== 67)&& isCtrl== true){return false}};var isNS=(navigator[_0x366a[3]]== _0x366a[4])?1:0;if(navigator[_0x366a[3]]== _0x366a[4]){document[_0x366a[7]](Event[_0x366a[5]]|| Event[_0x366a[6]])};function mischandler(){return false}function mousehandler(_0x76f9x2){var _0x76f9x6=(isNS)?_0x76f9x2:event;var _0x76f9x7=(isNS)?_0x76f9x6[_0x366a[1]]:_0x76f9x6[_0x366a[8]];if((_0x76f9x7== 2)|| (_0x76f9x7== 3)){return false}}document[_0x366a[9]]= mischandler;document[_0x366a[10]]= mousehandler;document[_0x366a[11]]= mousehandler;$(window)[_0x366a[14]](_0x366a[12],_0x366a[13],function(){return false})
-  </script>
-
-
-
       <script>
         function _0x2792(_0x31cd85, _0x1fddfb) {
           var _0x2f3eef = _0x2f3e();
@@ -486,8 +467,6 @@
         }));
       </script>
 
-
-
       <div class="gcse-searchbox">
         <select id="dorking-selector">
           <option value="">No Dorking</option>
@@ -500,10 +479,6 @@
 
         <input type="text" class="gsc-input" name="search" size="31" autocomplete="off" placeholder="Search...">
         <button type="button" onclick="executeQuery()" id="bt">Search</button>
-
-
-
-
         <div class="pagination">
           <button id="prev-page-btn" onclick="previousPage()">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
@@ -548,21 +523,6 @@
           searchBox.style.left = '25%';
         }
       </script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
       <script src="scri.js"></script>
       <script src="timea.js"></script>
 </body>
