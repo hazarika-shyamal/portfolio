@@ -1,0 +1,167 @@
+.view:hover{
+  transform: rotate(45deg);
+}
+@keyframes hero {
+
+    0%{transform: rotate(0deg);}  
+    50%{transform: rotate(280deg);} 
+    70%{transform: rotate(360deg);} 
+}
+
+
+
+#a{
+position: absolute;
+  width: 50px;
+  height: 50px;
+  background-color: rgb(130, 142, 212);
+  top: 10%;
+  right: 60%;
+  transition: all;
+  
+}
+
+
+
+
+
+
+
+
+
+    <script type="application/processing">
+
+       float ang=3;
+        float space=7;
+        float i,j,k;
+
+
+      void setup()
+      {
+       size(200,200,P3D);
+          background(255);
+            stroke(noise(0,255),noise(0,255),noise(0,255));
+      }
+
+
+
+      void draw()
+      {
+
+
+       a();
+
+      }
+
+
+      void a()
+      {
+
+      translate(mouseX,mouseY);
+
+
+        for(i=0;i<150;i+=space)
+        {
+
+          for(j=0;j<150;j+=space)
+
+          {
+
+            for(k=0;k<150;k+=space)
+            {
+
+              if(ang>0)
+                {
+
+
+              ang-=1;
+              point(i*ang,j,k);
+               rotateZ(ang);
+               ang+=2;
+                }
+              }
+            }
+           }
+
+
+      }
+
+      void b()
+      {
+
+
+
+
+
+
+
+      }
+    </script>
+
+
+
+
+
+
+
+
+
+
+<?php
+$handle = curl_init();
+ 
+$url = "https://www.ipinfo.io";
+ 
+// Set the url
+curl_setopt($handle, CURLOPT_URL, $url);
+// Set the result output to be a string.
+curl_setopt($handle, CURLOPT_RETURNTRANSFER, true);
+ 
+$output = curl_exec($handle);
+ 
+curl_close($handle);
+
+$a=json_decode($output,true);
+
+?>
+
+<?php echo $a['ip']; ?> <br>
+<?php echo $a['city']; ?> <br>
+<?php echo $a['loc']; ?> <br>
+<?php echo $a['org']; ?> <br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+let div = document.createElement('div')
+div.id = 'content';
+div.innerHTML = '<p>hi</p>';
+div.style.background = "red";
+div.style.top = "10%";
+div.style.left= "0%";
+document.body.appendChild(div);
+
+
+
+
+
+
+
